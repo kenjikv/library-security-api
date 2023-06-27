@@ -25,7 +25,7 @@ public class UserService implements UserDetailsService {
         return userRepository.findAll();
     }
 
-    public User getUser(UUID id) {
+    public User getUser(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
@@ -33,7 +33,7 @@ public class UserService implements UserDetailsService {
         return userRepository.save(user);
     }
 
-    public User updateUser(UUID id, User newUser) {
+    public User updateUser(Long id, User newUser) {
         return userRepository.findById(id)
                 .map(user -> {
                     user.setName(newUser.getName());
@@ -49,7 +49,7 @@ public class UserService implements UserDetailsService {
                 });
     }
 
-    public void deleteUser(UUID id) {
+    public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
 
