@@ -25,7 +25,7 @@ public class UserController {
 
     @GetMapping("/helloworld")
     public String helloWorld() {
-        return "Hello World Test Pipeline";
+        return "Hello World Test Pipeline 2";
     }
     @GetMapping
     public List<User> getUsers() {
